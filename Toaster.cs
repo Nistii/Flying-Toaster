@@ -129,10 +129,7 @@ namespace FlyingToaster
             Console.Clear();
 
             //Easter-Egg, der Toaster kann explodieren, wenn es kein SuperToaster ist, die Wattzahl über 3000 und für mehr als 30 Sek. getoastet wird
-            if (!(T1 is SuperToaster) | T1.toaster_Watt < 2800 | T1.toaster_Zeit < 30)
-            {
-            }
-            else
+            if (T1 is not SuperToaster & T1.toaster_Watt > 2800 & T1.toaster_Zeit > 30)
             {
                 UI.Toaster_Explode_Anim();
 
